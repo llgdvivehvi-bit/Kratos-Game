@@ -1,11 +1,11 @@
-/* 1. إعادة تعيين وتحديد الخطوط الأساسية */
+/* 1. المتغيرات الأساسية والتكويد */
 :root {
-    --primary-color: #e50914; /* أحمر ناري جذاب */
-    --secondary-color: #f7b204; /* أصفر ذهبي للمسة ثانية */
-    --background-dark: #121212; /* خلفية داكنة جداً */
-    --card-background: #1e1e1e; /* خلفية البطاقات أغمق قليلاً */
-    --text-light: #f5f5f5;
-    --text-medium: #b3b3b3;
+    --primary-ultra: #00bcd4; /* أزرق سماوي نيون */
+    --secondary-accent: #ff4081; /* وردي/بنفسجي للمسة ثانية */
+    --background-dark: #0f0f0f; /* أسود حالك */
+    --card-background: #1a1a1a; /* خلفية بطاقة داكنة مع عمق */
+    --text-light: #e0e0e0;
+    --text-dim: #b3b3b3;
 }
 
 * {
@@ -23,142 +23,169 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--primary-ultra);
     transition: color 0.3s;
 }
 
-a:hover {
-    color: var(--secondary-color);
-}
-
-/* 2. تصميم شريط التنقل (Header) */
+/* 2. شريط التنقل (النيون) */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background-color: var(--card-background);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px 5%;
+    background-color: var(--background-dark);
+    border-bottom: 2px solid rgba(0, 188, 212, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.logo {
-    font-size: 28px;
+.logo-ultra {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
     font-weight: 900;
-    color: var(--primary-color);
+    color: var(--primary-ultra);
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* تأثير نيون */
 }
 
 nav a {
-    margin-right: 25px;
+    margin-right: 35px;
     font-weight: 700;
-    color: var(--text-light);
+    color: var(--text-dim);
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav a:hover {
-    color: var(--primary-color);
+    color: var(--primary-ultra);
+    text-shadow: 0 0 5px var(--primary-ultra);
 }
 
 .search-btn {
     background: none;
     border: none;
     color: var(--text-light);
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     transition: color 0.3s;
 }
-
 .search-btn:hover {
-    color: var(--primary-color);
+    color: var(--secondary-accent);
 }
 
-/* 3. تصميم القسم الرئيسي (Hero Section) */
+/* 3. القسم الرئيسي (Cinematic Hero) */
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x800?text=Awesome+Game+Background') no-repeat center center/cover;
-    height: 60vh;
+    /* يمكنك استبدال الرابط أدناه برابط فيديو MP4 أو صورة كبيرة لتأثير سينمائي */
+    background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)), url('https://via.placeholder.com/1920x800?text=Cinematic+Game+BG') no-repeat center center/cover;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-bottom: 50px;
+    border-bottom: 4px solid var(--secondary-accent);
 }
 
 .hero-content h1 {
-    font-size: 56px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 68px;
     margin-bottom: 15px;
     font-weight: 900;
+    text-shadow: 0 0 15px rgba(255, 64, 129, 0.5); /* إضاءة نيون على النص */
 }
 
 .hero-content p {
-    font-size: 20px;
-    color: var(--text-medium);
-    margin-bottom: 30px;
+    font-size: 22px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
 }
 
-/* 4. تصميم الأزرار الاحترافية (Buttons) */
+/* 4. الأزرار (ULTRA BUTTONS) */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
+    padding: 14px 40px;
+    border-radius: 5px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.primary-btn {
-    background-color: var(--primary-color);
+.ultra-btn {
+    background-color: var(--primary-ultra);
+    color: var(--background-dark);
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+}
+
+.ultra-btn:hover {
+    background-color: var(--secondary-accent);
     color: var(--text-light);
-    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--secondary-accent);
 }
 
-.primary-btn:hover {
-    background-color: #a80710; /* ظل أغمق */
-    color: var(--text-light);
-    transform: translateY(-2px);
-}
-
-.secondary-btn {
+.secondary-ultra-btn {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--primary-ultra);
+    border: 2px solid var(--primary-ultra);
 }
 
-.secondary-btn:hover {
-    background-color: var(--primary-color);
+.secondary-ultra-btn:hover {
+    background-color: var(--primary-ultra);
+    color: var(--background-dark);
+}
+
+.ultra-download-btn {
+    background-color: var(--secondary-accent);
     color: var(--text-light);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+}
+.ultra-download-btn:hover {
+    background-color: #f70a64;
+    box-shadow: 0 0 10px var(--secondary-accent);
 }
 
-.small-btn {
-    padding: 8px 15px;
+.ultra-download-small {
+    background-color: var(--primary-ultra);
+    color: var(--background-dark);
+    padding: 8px 12px;
     font-size: 14px;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
 }
 
-/* 5. تصميم أقسام المحتوى المشتركة */
+/* 5. تصميم أقسام المحتوى */
 section {
-    padding: 40px 5%;
+    padding: 60px 5%;
 }
 
 h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--text-light);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
-/* 6. تصميم بطاقات الألعاب (Game Cards) */
+/* 6. تصميم بطاقات الألعاب (ULTRA CARD EFFECT) */
 .game-card {
     background-color: var(--card-background);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    transition: transform 0.4s, box-shadow 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 10px var(--primary-color);
+.ultra-effect:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-ultra); /* ظل قوي مع إضاءة نيون */
 }
 
 .game-card img {
@@ -167,81 +194,84 @@ h2 {
     display: block;
 }
 
-.featured-card {
-    padding-bottom: 15px;
+.card-details {
+    padding: 15px;
     text-align: center;
 }
 
-.featured-card h3 {
-    margin: 15px 0 5px 0;
+.card-details h4 {
+    color: var(--primary-ultra);
+    margin-bottom: 5px;
 }
 
 .mod-info {
-    color: var(--text-medium);
+    color: var(--secondary-accent);
     font-size: 14px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    padding: 0 15px;
+    font-weight: 700;
 }
 
-/* 7. تصميم الشبكات (Grids) */
+/* 7. تصميم بطاقات الألعاب المميزة */
 .featured-grid, .games-grid {
     display: grid;
-    gap: 30px;
-    max-width: 1200px;
+    gap: 40px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .featured-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .games-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-/* 8. تصميم بطاقات الألعاب المميزة (Featured Card Details) */
-.card-footer {
+/* 8. تصميم شرائح المميزات (Pills) */
+.feature-pills {
+    margin: 15px 0 20px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
+}
+
+.feature-pills span {
+    background-color: rgba(0, 188, 212, 0.1);
+    color: var(--primary-ultra);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
     align-items: center;
-    padding: 10px 0;
-    margin-top: 10px;
 }
 
-.rating {
-    color: var(--secondary-color);
-    font-weight: 700;
+.feature-pills i {
+    margin-left: 5px;
 }
 
-.download-btn {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 8px 20px;
-    border-radius: 5px;
-    font-weight: 700;
+.mod-info-small {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
 }
 
-.download-btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--background-dark);
+.small-card .card-details {
+    padding: 10px;
 }
 
-/* 9. تذييل الصفحة (Footer) */
+/* 9. تذييل الصفحة */
 footer {
     background-color: #0d0d0d;
     text-align: center;
-    padding: 20px 5%;
-    border-top: 1px solid var(--card-background);
+    padding: 25px 5%;
+    border-top: 2px solid var(--secondary-accent);
 }
 
 .footer-links a {
-    margin: 0 15px;
-    font-size: 14px;
-    color: var(--text-medium);
+    margin: 0 20px;
+    font-size: 15px;
+    color: var(--text-dim);
 }
-.load-more-btn {
-    display: block;
-    margin: 40px auto 0;
-    width: fit-content;
+.footer-links a:hover {
+    color: var(--primary-ultra);
 }
