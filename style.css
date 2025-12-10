@@ -1,277 +1,41 @@
-/* 1. المتغيرات الأساسية والتكويد */
-:root {
-    --primary-ultra: #00bcd4; /* أزرق سماوي نيون */
-    --secondary-accent: #ff4081; /* وردي/بنفسجي للمسة ثانية */
-    --background-dark: #0f0f0f; /* أسود حالك */
-    --card-background: #1a1a1a; /* خلفية بطاقة داكنة مع عمق */
-    --text-light: #e0e0e0;
-    --text-dim: #b3b3b3;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Cairo', sans-serif;
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-ultra);
-    transition: color 0.3s;
-}
-
-/* 2. شريط التنقل (النيون) */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: var(--background-dark);
-    border-bottom: 2px solid rgba(0, 188, 212, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo-ultra {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
-    font-weight: 900;
-    color: var(--primary-ultra);
-    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* تأثير نيون */
-}
-
-nav a {
-    margin-right: 35px;
-    font-weight: 700;
-    color: var(--text-dim);
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-nav a:hover {
-    color: var(--primary-ultra);
-    text-shadow: 0 0 5px var(--primary-ultra);
-}
-
-.search-btn {
-    background: none;
-    border: none;
-    color: var(--text-light);
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-.search-btn:hover {
-    color: var(--secondary-accent);
-}
-
-/* 3. القسم الرئيسي (Cinematic Hero) */
-#hero {
-    /* يمكنك استبدال الرابط أدناه برابط فيديو MP4 أو صورة كبيرة لتأثير سينمائي */
-    background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)), url('https://via.placeholder.com/1920x800?text=Cinematic+Game+BG') no-repeat center center/cover;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 50px;
-    border-bottom: 4px solid var(--secondary-accent);
-}
-
-.hero-content h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 68px;
-    margin-bottom: 15px;
-    font-weight: 900;
-    text-shadow: 0 0 15px rgba(255, 64, 129, 0.5); /* إضاءة نيون على النص */
-}
-
-.hero-content p {
-    font-size: 22px;
-    color: var(--text-dim);
-    margin-bottom: 40px;
-}
-
-/* 4. الأزرار (ULTRA BUTTONS) */
-.btn {
-    display: inline-block;
-    padding: 14px 40px;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.ultra-btn {
-    background-color: var(--primary-ultra);
-    color: var(--background-dark);
-    border: none;
-    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
-}
-
-.ultra-btn:hover {
-    background-color: var(--secondary-accent);
-    color: var(--text-light);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--secondary-accent);
-}
-
-.secondary-ultra-btn {
-    background-color: transparent;
-    color: var(--primary-ultra);
-    border: 2px solid var(--primary-ultra);
-}
-
-.secondary-ultra-btn:hover {
-    background-color: var(--primary-ultra);
-    color: var(--background-dark);
-}
-
-.ultra-download-btn {
-    background-color: var(--secondary-accent);
-    color: var(--text-light);
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 3px;
-    border: none;
-}
-.ultra-download-btn:hover {
-    background-color: #f70a64;
-    box-shadow: 0 0 10px var(--secondary-accent);
-}
-
-.ultra-download-small {
-    background-color: var(--primary-ultra);
-    color: var(--background-dark);
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 3px;
-    width: 100%;
-    text-align: center;
-}
-
-/* 5. تصميم أقسام المحتوى */
-section {
-    padding: 60px 5%;
-}
-
-h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
-    margin-bottom: 40px;
-    text-align: center;
-    color: var(--text-light);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-}
-
-/* 6. تصميم بطاقات الألعاب (ULTRA CARD EFFECT) */
-.game-card {
-    background-color: var(--card-background);
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s, box-shadow 0.4s;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.ultra-effect:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-ultra); /* ظل قوي مع إضاءة نيون */
-}
-
-.game-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.card-details {
-    padding: 15px;
-    text-align: center;
-}
-
-.card-details h4 {
-    color: var(--primary-ultra);
-    margin-bottom: 5px;
-}
-
-.mod-info {
-    color: var(--secondary-accent);
-    font-size: 14px;
-    font-weight: 700;
-}
-
-/* 7. تصميم بطاقات الألعاب المميزة */
-.featured-grid, .games-grid {
-    display: grid;
-    gap: 40px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.featured-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-.games-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-/* 8. تصميم شرائح المميزات (Pills) */
-.feature-pills {
-    margin: 15px 0 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.feature-pills span {
-    background-color: rgba(0, 188, 212, 0.1);
-    color: var(--primary-ultra);
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-}
-
-.feature-pills i {
-    margin-left: 5px;
-}
-
-.mod-info-small {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 10px;
-}
-
-.small-card .card-details {
-    padding: 10px;
-}
-
-/* 9. تذييل الصفحة */
+/* تنسيق التذييل الجديد والمخصص */
 footer {
     background-color: #0d0d0d;
     text-align: center;
-    padding: 25px 5%;
+    padding: 30px 5%;
     border-top: 2px solid var(--secondary-accent);
 }
 
-.footer-links a {
-    margin: 0 20px;
-    font-size: 15px;
-    color: var(--text-dim);
+.footer-details {
+    max-width: 400px;
+    margin: 0 auto 20px auto; /* مساحة في الأسفل */
+    padding: 15px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
-.footer-links a:hover {
-    color: var(--primary-ultra);
+
+.footer-details p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: center;
+}
+
+.footer-details a {
+    color: var(--primary-ultra); /* لتمييز الروابط بالنيون */
+    margin-right: 5px;
+}
+
+.telegram-note {
+    color: var(--secondary-accent); /* لتمييز ملاحظة التليجرام */
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #555;
+    margin-top: 20px;
 }
