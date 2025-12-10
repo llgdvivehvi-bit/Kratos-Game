@@ -3,84 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RIDA KRATOA 🎮: متجرك الأول لتحميل الألعاب والمحاكيات المعدلة بأقصى أداء.">
-    <title>RIDA KRATOA 🎮 | متجر الألعاب المعدلة بأداء فائق</title>
+    <title>KRATOS ENCRYPTOR | أداة التشفير المتقدمة</title>
     
     <link rel="stylesheet" href="style.css"> 
     
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght=400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo-ultra">RIDA KRATOA 🎮</div>
-        <nav>
-            <a href="#featured">المحاكي المميز</a>
-            <a href="#catalogue">جميع التطبيقات</a>
-            <a href="#support">الدعم الفني</a>
-        </nav>
-        <button class="search-btn"><i class="fas fa-search"></i></button>
-    </header>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="logo-text">KRATOS ENCRYPTOR <i class="fas fa-lock-open"></i></h1>
+            <p class="status-text">SYSTEM STATUS: <span id="status" class="status-ok">OPERATIONAL</span></p>
+        </header>
 
-    <section id="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>أداء فائق. قوة بلا حدود.</h1>
-            <p>أفضل المحاكيات والتطبيقات المعدلة خصيصاً لتجربة لعب غير مسبوقة على جميع الأجهزة.</p>
-            <a href="#catalogue" class="btn ultra-btn">ابدأ التحميل <i class="fas fa-download"></i></a>
-        </div>
-    </section>
-
-    <section id="featured">
-        <h2>✨ المحاكي الأقوى (ULTRA PICK)</h2>
-        <div class="featured-grid">
+        <div class="encryptor-panel">
             
-            <div class="game-card ultra-effect">
-                <img src="https://via.placeholder.com/300x180?text=3A+Emulator" alt="محاكي 3A">
-                <div class="card-details">
-                    <h4>محاكي 3A (PREMIUM)</h4>
-                    <p class="mod-info">محاكاة ألعاب PC للويشات فقط</p>
-                    <div class="feature-pills">
-                        <span><i class="fas fa-clock"></i> وقت غير محدود</span>
-                        <span><i class="fas fa-bolt"></i> دخول سريع</span>
-                    </div>
-                    <a href="https://t.me/Kratossosm/23" class="btn ultra-download-btn">تحميل (250MB)</a>
+            <div class="input-area panel-section">
+                <h2><i class="fas fa-keyboard"></i> أدخل النص السري</h2>
+                <textarea id="inputText" placeholder="اكتب النص هنا..."></textarea>
+                
+                <div class="controls-group">
+                    <label for="algorithm">خوارزمية التشفير:</label>
+                    <select id="algorithm">
+                        <option value="base64">Base64 (الخيار الأقوى)</option>
+                        <option value="reverse">Reverse (عكس النص)</option>
+                        </select>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="encryptBtn" class="btn primary-btn"><i class="fas fa-user-lock"></i> تشفير</button>
+                    <button id="decryptBtn" class="btn secondary-btn"><i class="fas fa-unlock"></i> فك التشفير</button>
                 </div>
             </div>
-            
-        </div>
-    </section>
 
-    <section id="catalogue">
-        <h2>🎮 الكتالوج الكامل والمحدث</h2>
-        <div class="games-grid">
-            
-            <div class="game-card ultra-effect small-card">
-                <img src="https://via.placeholder.com/200x120?text=3A+Emulator" alt="محاكي 3A">
-                <div class="card-details">
-                    <h5>محاكي 3A (PREMIUM)</h5>
-                    <p class="mod-info-small">وقت غير محدود ودخول سريع</p>
-                    <a href="https://t.me/Kratossosm/23" class="btn ultra-download-small">تنزيل</a>
+            <div class="output-area panel-section">
+                <h2><i class="fas fa-cogs"></i> النتيجة النهائية</h2>
+                <textarea id="outputText" placeholder="ستظهر النتيجة هنا..." readonly></textarea>
+                
+                <div class="output-actions">
+                    <button id="copyBtn" class="btn copy-btn"><i class="fas fa-copy"></i> نسخ النتيجة</button>
+                    <span id="copyMessage" class="copy-message"></span>
                 </div>
             </div>
-            
-        </div>
-        </section>
 
-    <footer>
-        <div class="footer-details">
-            <p>قائمة المميزين: <a href="https://t.me/noevxq" target="_blank">@noevxq</a></p>
-            
-            <p>المطور: <a href="https://t.me/W_X_03" target="_blank">@W_X_03</a></p>
-            <p>قناة المطور: <a href="https://t.me/Kratossosm" target="_blank">https://t.me/Kratossosm</a></p>
         </div>
-        
-        <p class="telegram-note">*يُعرض بالتليجرام فقط</p>
-        
-        <p class="copyright">&copy; 2025 RIDA KRATOA 🎮. جميع الحقوق محفوظة.</p>
-    </footer>
 
-    <script src="script.js"></script> 
+        <footer class="app-footer">
+            <p>Developed by RIDA KRATOA | Encrypting with <span id="runtime">JS</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
