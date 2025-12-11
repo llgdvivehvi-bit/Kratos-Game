@@ -183,7 +183,7 @@ select {
     font-weight: 700;
 }
 
-/* 5. التذييل (Footer) */
+/* 5. التذييل (Footer) المخصص */
 .app-footer {
     padding: 15px 30px;
     text-align: center;
@@ -191,6 +191,30 @@ select {
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
     font-family: var(--font-mono);
     font-size: 12px;
+}
+
+.footer-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 5px;
+}
+
+.footer-details p {
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+.footer-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.signature {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 5px;
 }
 
 /* تصميم متجاوب (للهواتف) */
