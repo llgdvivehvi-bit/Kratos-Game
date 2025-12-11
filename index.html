@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="KRATOS CODE INDEX: فهرس الرموز السرية والتفشيرات المخصصة. ابحث عن اسمك للحصول على الرمز الخاص بك.">
-    <meta name="keywords" content="KRATOS CODE INDEX, التفشير, رموز سرية, رضا كريتوس, هاكر أخلاقي, فهرس الأسماء">
-    
-    <title>KRATOS CODE INDEX | فهرس الرموز السرية</title>
+    <title>KRATOS ENCRYPTOR | أداة التشفير المتقدمة</title>
     
     <link rel="stylesheet" href="style.css"> 
     
@@ -15,12 +11,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    ```
 
-### ⏰ متى يظهر الموقع؟
+    <div class="container">
+        <header class="app-header">
+            <h1 class="logo-text">KRATOS ENCRYPTOR <i class="fas fa-lock-open"></i></h1>
+            <p class="status-text">SYSTEM STATUS: <span id="status" class="status-ok">OPERATIONAL</span></p>
+        </header>
 
-حتى بعد تطبيق هذه التعديلات، لن يظهر موقعك في نتائج البحث **فوراً**. تحتاج محركات البحث مثل Google إلى وقت لـ "الزحف" (Crawling) واكتشاف موقعك الجديد. هذه العملية قد تستغرق من **عدة أيام إلى عدة أسابيع**.
+        <div class="encryptor-panel">
+            
+            <div class="input-area panel-section">
+                <h2><i class="fas fa-keyboard"></i> أدخل النص السري</h2>
+                <textarea id="inputText" placeholder="اكتب النص هنا..."></textarea>
+                
+                <div class="controls-group">
+                    <label for="algorithm">خوارزمية التشفير:</label>
+                    <select id="algorithm">
+                        <option value="base64">Base64 (الخيار الأقوى)</option>
+                        <option value="reverse">Reverse (عكس النص)</option>
+                    </select>
+                </div>
 
-**لجعل العملية أسرع (اختياري):**
+                <div class="action-buttons">
+                    <button id="encryptBtn" class="btn primary-btn"><i class="fas fa-user-lock"></i> تشفير</button>
+                    <button id="decryptBtn" class="btn secondary-btn"><i class="fas fa-unlock"></i> فك التشفير</button>
+                </div>
+            </div>
 
-يمكنك إرسال رابط موقعك يدوياً إلى أدوات مشرفي المواقع (Google Search Console) للمطالبة بـ "الزحف السريع"، لكن هذا يتطلب عملية تحقق بسيطة.
+            <div class="output-area panel-section">
+                <h2><i class="fas fa-cogs"></i> النتيجة النهائية</h2>
+                <textarea id="outputText" placeholder="ستظهر النتيجة هنا..." readonly></textarea>
+                
+                <div class="output-actions">
+                    <button id="copyBtn" class="btn copy-btn"><i class="fas fa-copy"></i> نسخ النتيجة</button>
+                    <span id="copyMessage" class="copy-message"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-details">
+                <p>المطور: <a href="https://t.me/W_X_03" target="_blank">@W_X_03</a></p>
+                <p>بوتي على التليجرام: <a href="https://t.me/theHacking_BOT" target="_blank">@theHacking_BOT</a></p>
+            </div>
+            <p class="signature">رضا كريتوس.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
